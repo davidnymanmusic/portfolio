@@ -30,8 +30,8 @@ const SideBar = (props, location) => {
       {links.map(l => (
         <Link to={`${l.path}`}>
           {typeof window !== "undefined" && pathname === l.path
-            ? `> ${l.name}`
-            : `/${l.name}`}
+            ? `> ${l.name} `
+            : `${l.name} `}
           {typeof window !== "undefined" && pathname === l.path ? (
             <span className="blinking-cursor">|</span>
           ) : null}

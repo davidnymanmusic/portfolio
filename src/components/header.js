@@ -4,18 +4,15 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header>
-    <div>
-      <h1 id="title">
-        <Link
-          to="/"
-          style={{
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+    <Link
+      to="/"
+      style={{
+        textDecoration: `none`,
+      }}
+      className="title"
+    >
+      {siteTitle}
+    </Link>
   </header>
 )
 
