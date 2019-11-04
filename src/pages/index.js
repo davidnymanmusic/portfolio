@@ -5,8 +5,6 @@ import SEO from "../components/seo"
 
 import "../index.css"
 
-const und = props => <span>{props.children}</span>
-
 const IndexPage = () => {
   return (
     <Layout>
@@ -16,15 +14,21 @@ const IndexPage = () => {
           <div class="typewriter first">
             <h1>
               {" "}
-              > Hello, I'm a{" "}
-              <span style={{ textDecoration: "underline" }}>web-developer</span>
+              <span style={{ color: "#94b2b3", fontWeight: 900 }}>></span>{" "}
+              Hello, I'm a{" "}
+              <span style={{ textDecoration: "underline" }}>web developer</span>
             </h1>
           </div>
           <div class="typewriter second">
             <h1>
               {" "}
-              >{" "}
-              <span style={{ textDecoration: "underline" }}>
+              <span style={{ color: "#94b2b3", fontWeight: 900 }}>> </span>
+              <span
+                onClick={() =>
+                  window.open("https://www.davidnymanmusic.com", "_blank")
+                }
+                style={{ textDecoration: "underline", cursor: "pointer" }}
+              >
                 music composer
               </span>
             </h1>
@@ -32,7 +36,8 @@ const IndexPage = () => {
           <div class="typewriter third">
             <h1>
               {" "}
-              > and all-around{" "}
+              <span style={{ color: "#94b2b3", fontWeight: 900 }}>></span> and
+              all-around{" "}
               <span style={{ textDecoration: "underline" }}>good dude.</span>
             </h1>
           </div>

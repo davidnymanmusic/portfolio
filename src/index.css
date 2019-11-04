@@ -31,6 +31,12 @@ body {
   background-color: var(--green);
 }
 
+::selection {
+  color: var(--white);
+  opacity: 1;
+  background-color: #1a4661;
+}
+
 html,
 body {
   margin: 0;
@@ -218,6 +224,63 @@ main {
 #page-wrap {
   text-align: left;
 }
+.center {
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+  display: flex;
+  flex: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.project:hover {
+  box-sizing: border-box;
+  border: 8px solid var(--light);
+  color: var(--peach);
+  background: var(--green);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.project {
+  background: var(--peach);
+  border: 8px solid var(--white);
+  color: var(--blue);
+  /* border: none; */
+  outline: none;
+  font-size: 2.5em;
+  font-family: "DM Serif Display", serif;
+  width: 200px;
+  height: 200px;
+  margin: 2em auto;
+  display: block;
+  text-align: center;
+}
+
+.resume {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.resume p {
+  background: var(--peach);
+  color: var(--blue);
+  font-size: 1.2em;
+  padding: 2px 5px;
+  width: fit-content;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.resume h1 {
+  color: var(--blue);
+  background-color: var(--light);
+  width: fit-content;
+  padding: 2px 5px;
+  margin-bottom: 10px;
+  font-family: "DM Serif Display", serif;
+}
 
 .blinking-cursor {
   font-weight: 100;
@@ -236,7 +299,7 @@ main {
   margin: 0 auto;
   letter-spacing: 2px;
   font-size: 1em;
-  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typing 1.2s steps(40, end), blink-caret 0.75s step-end infinite;
   font-family: "DM Serif Display", serif;
 }
 
