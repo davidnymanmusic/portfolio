@@ -8,6 +8,7 @@ import { Parallax } from "react-scroll-parallax"
 
 import ibm from "../images/ibm.png"
 import { useScroll } from "../hooks/useScroll"
+import useWindowDimensions from "../hooks/useWindowDimensions"
 
 const size = { height: 100, width: 100 }
 const SecondPage = props => {
@@ -28,18 +29,17 @@ const SecondPage = props => {
       link: "https://www.linkedin.com/in/david-nyman-music/",
     },
   ]
-  const getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min
-  }
-  const offset = getRandomInt(50, 150)
   // const isSlower = getRandomInt(0, 1) ? true : false
   const { scrollX, scrollY, scrollDirection } = useScroll()
+  const { height, width } = useWindowDimensions()
+
+  console.log(Math.ceil(scrollY * 0.2))
   // console.log(scrollX, scrollY, scrollDirection)
   return (
     <Layout>
       <SEO title="resume" />
 
-      <div className="content" style={{ height: 1000 }}>
+      <div className="content" style={{ height: 10000 }}>
         <h1 className="h1">Résumé</h1>
 
         {/* <Parallax
@@ -51,7 +51,8 @@ const SecondPage = props => {
         <div
           style={{
             height: 200,
-            width: scrollY,
+            width: Math.ceil(scrollY * 1.2),
+            maxWidth: width * 0.5,
             border: "3px solid yellow",
             backgroundColor: "white",
             // opacity: 0.5,
@@ -62,13 +63,22 @@ const SecondPage = props => {
             whiteSpace: "no-wrap",
           }}
         >
-          <h1>Software Engineer</h1>
+          <h1 style={{ whiteSpace: "nowrap", overflow: "auto" }}>
+            Software Engineer
+          </h1>
+          <p style={{ whiteSpace: "nowrap", overflow: "auto" }}>
+            Officia irure non eiusmod incididunt sit eiusmod duis id
+            labore.Commodo voluptate eiusmod qui et commodo voluptate cupidatat
+            anim veniam do.Ex mollit nostrud aliqua veniam.Eu velit nostrud
+            eiusmod nulla deserunt fugiat commodo fugiat dolore.
+          </p>
           <img style={{ width: "200px" }} src={ibm}></img>
         </div>
         <div
           style={{
             height: 200,
-            width: scrollY - 60,
+            width: Math.ceil(scrollY * 0.5),
+            maxWidth: "100%",
             border: "3px solid yellow",
             backgroundColor: "white",
             // opacity: 0.5,
