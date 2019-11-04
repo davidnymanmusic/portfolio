@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=DM+Serif+Display|DM+Serif+Text|Frank+Ruhl+Libre|Poppins&display=swap");
 
+@import "../../gatsby-portfolio/node_modules/sal.js/dist/sal.css";
+
 :root {
   --blue: #1a4661;
   --green: #0c3a39;

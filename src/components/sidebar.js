@@ -36,7 +36,12 @@ export default () => {
     <Location>
       {locationProps => {
         return (
-          <SideBar location={"/portolio" + locationProps.location.pathname} />
+          <SideBar
+            location={
+              "https://davidnymanmusic.github.io//portolio" +
+              locationProps.location.pathname
+            }
+          />
         )
       }}
     </Location>

@@ -8,6 +8,8 @@ import { Parallax, ParallaxBanner } from "react-scroll-parallax"
 import Fade from "react-reveal/Fade"
 import ibm from "../images/ibm.png"
 
+import sal from "sal.js"
+
 const size = { height: 100, width: 100 }
 const SecondPage = props => {
   const icons = [
@@ -30,11 +32,11 @@ const SecondPage = props => {
   return (
     <Layout>
       <SEO title="resume" />
-      <Fade top>
-        <div className="content">
-          <h1 className="h1">Résumé</h1>
 
-          {/* <Parallax y={["600%", "100%"]} x={["50%", "50%"]} tagOuter="figure">
+      <div className="content" onScroll={() => console.log("hey")}>
+        <h1 className="h1">Résumé</h1>
+
+        {/* <Parallax y={["600%", "100%"]} x={["50%", "50%"]} tagOuter="figure">
           <div
             style={{
               height: 200,
@@ -60,7 +62,7 @@ const SecondPage = props => {
             }}
           ></div>
         </Parallax> */}
-          {/* <Parallax y={["1%", "160%"]} x={["-190%", "240%"]} tagOuter="figure">
+        {/* <Parallax y={["1%", "160%"]} x={["-190%", "240%"]} tagOuter="figure">
           <div
             style={{
               height: 200,
@@ -84,36 +86,35 @@ const SecondPage = props => {
             }}
           ></div>
         </Parallax> */}
-          <div className="resume">
-            <h1>Work Experience</h1>
-            <p>
-              Software Engineer Apprentice at <b>IBM</b>
-              <br></br>
-              Spent time at the <i>Garage for Cloud</i> building an internal
-              application for deploying Talent onto client engagements
-            </p>
+        <div className="resume">
+          <h1>Work Experience</h1>
+          <p>
+            Software Engineer Apprentice at <b>IBM</b>
+            <br></br>
+            Spent time at the <i>Garage for Cloud</i> building an internal
+            application for deploying Talent onto client engagements
+          </p>
 
-            <h1>Education</h1>
-            <p>
-              Hampshire College - 2006-2010<br></br>
-              B.A. in Music Compostion for Film
-            </p>
+          <h1>Education</h1>
+          <p>
+            Hampshire College - 2006-2010<br></br>
+            B.A. in Music Compostion for Film
+          </p>
+        </div>
+      </div>
+
+      <div className="center">
+        {icons.map((i, index) => (
+          <div
+            key={index}
+            className="icon"
+            onClick={() => window.open(i.link, "_blank")}
+          >
+            {i.icon}
+            {<p>{i.text}</p>}
           </div>
-        </div>
-
-        <div className="center">
-          {icons.map((i, index) => (
-            <div
-              key={index}
-              className="icon"
-              onClick={() => window.open(i.link, "_blank")}
-            >
-              {i.icon}
-              {<p>{i.text}</p>}
-            </div>
-          ))}
-        </div>
-      </Fade>
+        ))}
+      </div>
     </Layout>
   )
 }
