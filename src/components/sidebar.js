@@ -1,8 +1,8 @@
 import React from "react"
 import { slide as Menu } from "react-burger-menu"
 import { Link } from "gatsby"
-
-const SideBar = (props, location) => {
+import { Location } from "@reach/router"
+const SideBar = props => {
   const links = [
     {
       path: "/",
@@ -17,23 +17,28 @@ const SideBar = (props, location) => {
       name: "resume",
     },
   ]
-  // const pathname =
-  //   "/" +
-  //   window.location.pathname
-  //     .split("/")
-  //     .pop()
-  //     .trim()
-  // if (typeof window === "undefined") {
-  //   global.window = {}
-  // }
 
   return (
-    // Pass on our props
     <Menu {...props}>
       {links.map(l => (
-        <Link to={`${l.path}`}>> {l.name} </Link>
+        <Link to={`${l.path}`}>
+          {props.location === l.path ? `> ${l.name} ` : `${l.name} `}
+          {props.location === l.path ? (
+            <span className="blinking-cursor">|</span>
+          ) : null}
+        </Link>
       ))}
     </Menu>
   )
 }
-export default SideBar
+export default () => {
+  return (
+    <Location>
+      {locationProps => {
+        return (
+          <SideBar location={"/portolio" + locationProps.location.pathname} />
+        )
+      }}
+    </Location>
+  )
+}

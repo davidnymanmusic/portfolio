@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -6,15 +6,12 @@ import SEO from "../components/seo"
 import "../index.css"
 
 const IndexPage = () => {
-  if (typeof window === "undefined") {
-    global.window = {}
-  }
   return (
     <Layout>
       <div id="App">
         <SEO title="Home" />
-        <div class="statement">
-          <div class="typewriter first">
+        <div className="statement">
+          <div className="typewriter first">
             <h1>
               {" "}
               <span style={{ color: "#94b2b3", fontWeight: 900 }}>></span>{" "}
@@ -22,7 +19,7 @@ const IndexPage = () => {
               <span style={{ textDecoration: "underline" }}>web developer</span>
             </h1>
           </div>
-          <div class="typewriter second">
+          <div className="typewriter second">
             <h1>
               {" "}
               <span style={{ color: "#94b2b3", fontWeight: 900 }}>> </span>
@@ -36,7 +33,7 @@ const IndexPage = () => {
               </span>
             </h1>
           </div>
-          <div class="typewriter third">
+          <div className="typewriter third">
             <h1>
               {" "}
               <span style={{ color: "#94b2b3", fontWeight: 900 }}>></span> and
@@ -46,7 +43,7 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <div class="content"></div>
+        <div className="content"></div>
       </div>
     </Layout>
   )
