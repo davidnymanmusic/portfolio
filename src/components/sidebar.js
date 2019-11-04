@@ -17,25 +17,21 @@ const SideBar = (props, location) => {
       name: "resume",
     },
   ]
-  const pathname =
-    "/" +
-    window.location.pathname
-      .split("/")
-      .pop()
-      .trim()
+  // const pathname =
+  //   "/" +
+  //   window.location.pathname
+  //     .split("/")
+  //     .pop()
+  //     .trim()
+  // if (typeof window === "undefined") {
+  //   global.window = {}
+  // }
 
   return (
     // Pass on our props
     <Menu {...props}>
       {links.map(l => (
-        <Link to={`${l.path}`}>
-          {typeof window !== "undefined" && pathname === l.path
-            ? `> ${l.name} `
-            : `${l.name} `}
-          {typeof window !== "undefined" && pathname === l.path ? (
-            <span className="blinking-cursor">|</span>
-          ) : null}
-        </Link>
+        <Link to={`${l.path}`}>> {l.name} </Link>
       ))}
     </Menu>
   )

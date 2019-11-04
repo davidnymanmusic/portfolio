@@ -6,6 +6,9 @@ import SEO from "../components/seo"
 import "../index.css"
 
 const IndexPage = () => {
+  if (typeof window === "undefined") {
+    global.window = {}
+  }
   return (
     <Layout>
       <div id="App">
