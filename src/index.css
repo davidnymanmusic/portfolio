@@ -92,6 +92,7 @@ footer {
 }
 .icon {
   color: var(--light);
+  cursor: pointer;
 }
 .icon:hover {
   color: var(--peach);

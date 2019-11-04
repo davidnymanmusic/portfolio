@@ -37,8 +37,8 @@ const IndexPage = () => {
             <h1>
               {" "}
               <span style={{ color: "#94b2b3", fontWeight: 900 }}>></span> and
-              all-around{" "}
-              <span style={{ textDecoration: "underline" }}>good dude.</span>
+              ready to{" "}
+              <span style={{ textDecoration: "underline" }}>collaborate.</span>
             </h1>
           </div>
         </div>
