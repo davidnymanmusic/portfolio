@@ -4,11 +4,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GoMarkGithub } from "react-icons/go"
 import { FaTwitter, FaLinkedin } from "react-icons/fa"
-import { Parallax, ParallaxBanner } from "react-scroll-parallax"
-import Fade from "react-reveal/Fade"
-import ibm from "../images/ibm.png"
+import { Parallax } from "react-scroll-parallax"
 
-import sal from "sal.js"
+import ibm from "../images/ibm.png"
+import { useScroll } from "../hooks/useScroll"
 
 const size = { height: 100, width: 100 }
 const SecondPage = props => {
@@ -29,28 +28,77 @@ const SecondPage = props => {
       link: "https://www.linkedin.com/in/david-nyman-music/",
     },
   ]
+  const getRandomInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+  const offset = getRandomInt(50, 150)
+  // const isSlower = getRandomInt(0, 1) ? true : false
+  const { scrollX, scrollY, scrollDirection } = useScroll()
+  // console.log(scrollX, scrollY, scrollDirection)
   return (
     <Layout>
       <SEO title="resume" />
 
-      <div className="content" onScroll={() => console.log("hey")}>
+      <div className="content" style={{ height: 1000 }}>
         <h1 className="h1">Résumé</h1>
 
-        {/* <Parallax y={["600%", "100%"]} x={["50%", "50%"]} tagOuter="figure">
-          <div
-            style={{
-              height: 200,
-              width: "300px",
-              border: "3px solid yellow",
-              backgroundColor: "white",
-              opacity: 0.5,
-            }}
-          >
-            {" "}
-            <img style={{ width: "200px" }} src={ibm}></img>
-          </div>
-        </Parallax>
-        <Parallax y={["700%", "50%"]} x={["0%", "0%"]} tagOuter="figure">
+        {/* <Parallax
+          styleInner={{ backgroundColor: "green", width: "fit-content" }}
+          y={[0, 370]}
+          // x={[10, -scrollY + 1000]}
+          tagOuter="figure"
+        > */}
+        <div
+          style={{
+            height: 200,
+            width: scrollY,
+            border: "3px solid yellow",
+            backgroundColor: "white",
+            // opacity: 0.5,
+            position: "fixed",
+            top: "8em",
+            padding: 0,
+            margin: 0,
+            whiteSpace: "no-wrap",
+          }}
+        >
+          <h1>Software Engineer</h1>
+          <img style={{ width: "200px" }} src={ibm}></img>
+        </div>
+        <div
+          style={{
+            height: 200,
+            width: scrollY - 60,
+            border: "3px solid yellow",
+            backgroundColor: "white",
+            // opacity: 0.5,
+            position: "fixed",
+            top: "22em",
+            padding: 0,
+            margin: 0,
+            whiteSpace: "no-wrap",
+          }}
+        >
+          <h1>Software Engineer</h1>
+          <img style={{ width: "200px" }} src={ibm}></img>
+        </div>
+        {/* </Parallax> */}
+
+        {/* <Parallax
+          styleInner={{ backgroundColor: "blue", width: "fit-content" }}
+          // y={[400, 300]}
+          y={[-300, 240]}
+          x={[10, 240]}
+          tagOuter="figure"
+        > */}
+
+        {/* </Parallax> */}
+        {/* <Parallax
+          styleInner={{ width: "fit-content" }}
+          y={["700%", "50%"]}
+          x={["0%", "0%"]}
+          tagOuter="figure"
+        >
           <div
             style={{
               height: 200,
@@ -73,8 +121,8 @@ const SecondPage = props => {
               opacity: 0.5,
             }}
           ></div>
-        </Parallax>
-        <Parallax y={["-10%", "20%"]} x={["-100%", "180%"]} tagOuter="figure">
+        </Parallax> */}
+        {/* <Parallax y={["-10%", "20%"]} x={["-100%", "180%"]} tagOuter="figure">
           <div
             style={{
               height: 200,
