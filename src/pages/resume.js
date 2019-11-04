@@ -4,7 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GoMarkGithub } from "react-icons/go"
 import { FaTwitter, FaLinkedin } from "react-icons/fa"
-import { Parallax } from "react-scroll-parallax"
+import { Parallax, ParallaxBanner } from "react-scroll-parallax"
+import Fade from "react-reveal/Fade"
+import ibm from "../images/ibm.png"
 
 const size = { height: 100, width: 100 }
 const SecondPage = props => {
@@ -28,36 +30,41 @@ const SecondPage = props => {
   return (
     <Layout>
       <SEO title="resume" />
-      <div className="content">
-        <h1 className="h1">Résumé</h1>
-        <Parallax y={[-200, 200]} x={[-60, 20]} tagOuter="figure">
+      <Fade top>
+        <div className="content">
+          <h1 className="h1">Résumé</h1>
+
+          {/* <Parallax y={["600%", "100%"]} x={["50%", "50%"]} tagOuter="figure">
           <div
             style={{
               height: 200,
-              width: "10px",
+              width: "300px",
               border: "3px solid yellow",
-              backgroundColor: "yellow",
+              backgroundColor: "white",
               opacity: 0.5,
             }}
-          ></div>
+          >
+            {" "}
+            <img style={{ width: "200px" }} src={ibm}></img>
+          </div>
         </Parallax>
-        <Parallax y={[260, 5]} x={[30, 80]} tagOuter="figure">
+        <Parallax y={["700%", "50%"]} x={["0%", "0%"]} tagOuter="figure">
           <div
             style={{
               height: 200,
-              width: "10px",
+              width: "300px",
               border: "3px solid red",
               zIndex: 2,
-              backgroundColor: "red",
+              backgroundColor: "white",
               opacity: 0.5,
             }}
           ></div>
-        </Parallax>
-        <Parallax y={[160, 20]} x={[22, 100]} tagOuter="figure">
+        </Parallax> */}
+          {/* <Parallax y={["1%", "160%"]} x={["-190%", "240%"]} tagOuter="figure">
           <div
             style={{
               height: 200,
-              width: "10px",
+              width: "300px",
               border: "3px solid white",
               zIndex: 4,
               backgroundColor: "white",
@@ -65,39 +72,19 @@ const SecondPage = props => {
             }}
           ></div>
         </Parallax>
-        <Parallax y={[-40, 0]} x={[-12, 50]} tagOuter="figure">
+        <Parallax y={["-10%", "20%"]} x={["-100%", "180%"]} tagOuter="figure">
           <div
             style={{
               height: 200,
-              width: "10px",
+              width: "300px",
               border: "3px solid blue",
               zIndex: 4,
-              backgroundColor: "blue",
+              backgroundColor: "white",
               opacity: 0.5,
             }}
           ></div>
-        </Parallax>
-      </div>
-      <div className="center">
-        {icons.map((i, index) => (
-          <div
-            key={index}
-            className="icon"
-            onClick={() => window.open(i.link, "_blank")}
-          >
-            {i.icon}
-            {<p>{i.text}</p>}
-          </div>
-        ))}
-      </div>
-    </Layout>
-  )
-}
-
-export default SecondPage
-
-{
-  /* <div className="resume">
+        </Parallax> */}
+          <div className="resume">
             <h1>Work Experience</h1>
             <p>
               Software Engineer Apprentice at <b>IBM</b>
@@ -105,11 +92,30 @@ export default SecondPage
               Spent time at the <i>Garage for Cloud</i> building an internal
               application for deploying Talent onto client engagements
             </p>
- 
-          <h1>Education</h1>
-          <p>
-            Hampshire College - 2006-2010<br></br>
-            B.A. in Music Compostion for Film
-          </p>
-        </div> */
+
+            <h1>Education</h1>
+            <p>
+              Hampshire College - 2006-2010<br></br>
+              B.A. in Music Compostion for Film
+            </p>
+          </div>
+        </div>
+
+        <div className="center">
+          {icons.map((i, index) => (
+            <div
+              key={index}
+              className="icon"
+              onClick={() => window.open(i.link, "_blank")}
+            >
+              {i.icon}
+              {<p>{i.text}</p>}
+            </div>
+          ))}
+        </div>
+      </Fade>
+    </Layout>
+  )
 }
+
+export default SecondPage
