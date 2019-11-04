@@ -51,7 +51,10 @@ const SecondPage = props => {
         <div
           style={{
             height: 200,
-            width: Math.ceil(scrollY * 1.2),
+            width:
+              scrollDirection === "up" && scrollY < 1595
+                ? Math.ceil(scrollY * 2)
+                : "1595px",
             maxWidth: width * 0.5,
             border: "3px solid yellow",
             backgroundColor: "white",
@@ -77,8 +80,32 @@ const SecondPage = props => {
         <div
           style={{
             height: 200,
-            width: Math.ceil(scrollY * 0.5),
-            maxWidth: "100%",
+            width:
+              scrollDirection === "up" && scrollY < 1595
+                ? Math.ceil(scrollY * 1.5)
+                : "1595px",
+            maxWidth: width * 0.5,
+            border: "3px solid yellow",
+            backgroundColor: "white",
+            // opacity: 0.5,
+            position: "fixed",
+            top: "42em",
+            padding: 0,
+            margin: 0,
+            whiteSpace: "no-wrap",
+          }}
+        >
+          <h1>Software Engineer</h1>
+          <img style={{ width: "200px" }} src={ibm}></img>
+        </div>
+        <div
+          style={{
+            height: 200,
+            width:
+              scrollDirection === "up" && scrollY < 1595
+                ? Math.ceil(scrollY)
+                : "1595px",
+            maxWidth: width * 0.5,
             border: "3px solid yellow",
             backgroundColor: "white",
             // opacity: 0.5,
